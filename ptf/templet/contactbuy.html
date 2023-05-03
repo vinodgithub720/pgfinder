@@ -1,0 +1,131 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Contact Form 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'assect/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section img bg-hero" style="background-image: url({% static 'assect/images/bg_1.jpg' %});">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Contact Form #10</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-11">
+					<div class="wrapper">
+						<div class="row no-gutters justify-content-between">
+							<div class="col-lg-6 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5">
+									<h3 class="mb-4">Get in touch to buy PG</h3>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-map-marker"></span>
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>Address:</span> 198 West, abc complex, ahmedabad, gujarat, india</p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-phone"></span>
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>Phone:</span> <a href="tel:9265436800">+91 9265436800</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-paper-plane"></span>
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>Email:</span> <a href="mailto:imrankhanbaloch811@.com">info@PGfinder.com</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-globe"></span>
+				        		</div>
+				        		<div class="text pl-4">
+					            <p><span>Website</span> <a href="/">PGFinder.com</a></p>
+					          </div>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-lg-5">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">Get in touch with us</h3>
+									{% comment %} <div id="form-message-warning" class="mb-4"></div> 
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div> {% endcomment %}
+									<form method="POST">
+                    				{% csrf_token %}
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+                          						{{form.name | as_crispy_field}}
+                          {% comment %} <input type="text" class="form-control" name="name" id="name" placeholder=" YourName" required=""> {% endcomment %}
+												</div>
+											</div>
+											<div class="col-md-12"> 
+												<div class="form-group">
+                          						{{form.email | as_crispy_field}}
+                         {% comment %} <input type="email" class="form-control" name="email" id="email" placeholder="Email" required=""> {% endcomment %}
+												</div>
+											</div>
+											{% comment %} <div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Your price">
+												</div>
+											</div> {% endcomment %}
+                      <div class="col-md-12">
+												<div class="form-group">
+                          {{form.subject | as_crispy_field}}
+                        {% comment %} <input type="text" class="form-control" name="subject" id="subject" placeholder="Contact No." required=""> {% endcomment %}
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+                          {{form.message | as_crispy_field}}
+                          {% comment %} <textarea name="message" class="form-control" id="message" cols="30" rows="5" placeholder="inquiry for property"  required=""></textarea> {% endcomment %}
+												</div>
+											</div>
+											{% comment %} <div class="col-md-12">
+												<div class="form-group">
+													<input type="submit"  class="btn btn-primary">
+													<div class="submitting"></div>
+												</div> {% endcomment %}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'assect/js/jquery.min.js' %}"></script>
+  <script src="{% static 'assect/js/popper.js' %}"></script>
+  <script src="{% static 'assect/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assect/js/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'assect/js/main.js' %}"></script>
+
+	</body>
+</html>
+

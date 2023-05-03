@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 50%;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+  
+
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+} 
+
+ .button4 {border-radius: 12px;}
+</style>
+</head>
+<body style="background:#e6e6e6">
+
+
+<center><h2 style="background:linear-gradient(#66ffff, #000099)">YOUR PROFILE</h2>
+
+<div class="card">
+    {% csrf_token %} 
+  <img src="https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt="Avatar" style="width:40%">
+  <div class="container" style="background: linear-gradient(#000099, #66ffff)";>
+    <h2><b> Your Username:{{user.username}}</b></h2> 
+    <p><h2> Your Email: {{user.email}}</h2></p>
+    
+    <a   href="/user/login/">
+     <button class="button button4" value="profile" style="background-color:black;">Go back</button>
+    </a>
+     {% comment %} <p>Password: {{user.password}}</p> {% endcomment %}
+    
+    {% comment %} <p>{{user.email}}</p> {% endcomment %}
+  </div>
+</div>
+</center>
+
+</body>
+</html> 
